@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
 }
@@ -23,6 +25,25 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.ant-form {
+  margin-top: 150px;
+  margin-right: 20px;
+  margin-left: 100px;
+}
+
+.ant-input {
+  width: 250px;
+}
+
+.ant-input-password {
+  width: 250px;
+}
+.ant-layout {
+  height: 657px;
+}
+#signup {
+  margin-left: 20px;
+}
 
 .App-link {
   color: #61dafb;
@@ -35,4 +56,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#editprofile {
+  margin-top: 40px;
+}
+input {
+  width: 30%;
+}
+#form-name {
+  width: 20%;
 }
