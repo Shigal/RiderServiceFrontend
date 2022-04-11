@@ -51,7 +51,7 @@ export const Dashboard = (props) => {
             setData(response.data)
         }).catch((e) => {
             localStorage.clear();
-            navigate("/login");
+            navigate("/");
         })
     }, [])
 
@@ -85,7 +85,7 @@ export const Dashboard = (props) => {
                             <Descriptions.Item label="Contact">{data && `${data && data.contact}` }</Descriptions.Item>
                             <Descriptions.Item label="License">{data && `${data && data.license}` }</Descriptions.Item>
                             <Descriptions.Item label="id">{data && `${data && data.id}` }</Descriptions.Item>
-                            <Descriptions.Switch label="Active"><Switch defaultChecked onChange={onChangeSwitch} /></Descriptions.Switch>
+                            <Descriptions.Switch label="Active"><Switch checked="false" onChange={onChangeSwitch} /></Descriptions.Switch>
                         </Descriptions>
 
                         <div>
@@ -153,7 +153,9 @@ export const Dashboard = (props) => {
             case 'orders':
                 return(
                     // <Link to="/order"><OrderDetails/></Link>
+                    <>
                     <OrderDetails/>
+                    </>
                 );
             case 'profile':
                 return(

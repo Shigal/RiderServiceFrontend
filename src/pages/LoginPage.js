@@ -56,6 +56,9 @@ const LoginPage = ({loading, error, ...props}) => {
         });
     }
 
+    console.log("errorrrrrrrrr", error);
+
+
     const handleRegister = () => {
         navigate("/register")
     }
@@ -153,10 +156,9 @@ const LoginPage = ({loading, error, ...props}) => {
             {loading && (<Spin animation="border" aria-hidden="true"/>)}
             </Button>
         </Form.Item>
-
-        { error && <Alert type="warning">{error}</Alert> }
-
         </Form>
+        {/* <p>error-----{error}</p> */}
+        { error && <Alert message="Error" type="error" description={error} showIcon closable/>}
     </div>
     )
     
@@ -168,7 +170,6 @@ const mapStateToProps=({auth})=>{
         loading:auth.loading,
         error:auth.error
 }}
-
 
 const mapDispatchToProps=(dispatch)=>{
 

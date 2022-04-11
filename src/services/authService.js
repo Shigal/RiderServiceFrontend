@@ -41,10 +41,31 @@ export const updateProfile = (profile,id) => {
     })
 }
 
+export const changeOrderStatus = (data) => {
+    return axios({
+        method:'PUT',
+        url: `${process.env.hostUrl||'http://localhost:8181'}/thekafka/orderStatusChange`,
+        headers:{
+            'Authorization':getToken()
+        },
+        data: data
+    })
+}
+
 export const publish=()=>{
     return axios({
         method:'GET',
-        url: `${process.env.hostUrl||'http://localhost:8181'}/thekafka/publish`,
+        url: `${process.env.hostUrl||'http://localhost:8181'}/thekafka/publish/rider`,
+        headers:{
+            'Authorization':getToken()
+        }
+    })
+}
+
+export const getOrderDetails=()=>{
+    return axios({
+        method:'GET',
+        url: `${process.env.hostUrl||'http://localhost:8181'}/thekafka/getorder`,
         headers:{
             'Authorization':getToken()
         }
